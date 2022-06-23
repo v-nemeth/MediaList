@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Media</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Image</th>
+      <th scope="col">Title</th>
+      <th scope="col">Type</th>
+      <th scope="col">Score</th>
+      <th scope="col">Progress</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @media.each do |medium| %>
+    <tr>
+      <td><%= medium.id%></td>
+      <td><%= medium.image_path%></td>
+      <td><%= medium.title%></td>
+      <td><%= medium.media_type%></td>
+      <td><%= medium.score%></td>
+      <td><%= medium.progress%></td>
+      <td><%= link_to "Show", medium %></td>
+      <td><%= button_to "Destroy this medium", @medium, method: :delete %></td>
+
+
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to "New medium", new_medium_path %>
